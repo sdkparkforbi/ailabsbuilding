@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포천시 선단동 · 대학원 연구동 + 기숙사동 조감도</title>
+
+  <!-- OG Meta Tags for Link Preview / Thumbnail -->
+  <!-- ⚠️ 아래 URL을 본인의 GitHub Pages URL로 변경하세요 -->
+  <meta property="og:title" content="포천시 선단동 · 대학원 연구동 + 기숙사동 건립 조감도">
+  <meta property="og:description" content="200명 수용 · 연구동 B1+6F · 기숙사동 B1+7F (1인실 200실) · 적벽돌 외관 · 단면 투시도">
+  <meta property="og:image" content="thumbnail.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="포천시 선단동 · 대학원 연구동 + 기숙사동 건립 조감도">
+  <meta name="twitter:description" content="200명 수용 · 연구동 B1+6F · 기숙사동 B1+7F (1인실 200실)">
+  <meta name="twitter:image" content="thumbnail.png">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #f5f3ed 0%, #e8e4d8 100%);
+      font-family: 'Noto Sans KR', sans-serif;
+      padding: 16px;
+    }
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 { font-size: 20px; font-weight: 800; color: #2a1a0a; text-align: center; }
+    .subtitle { color: #6a5a4a; font-size: 11px; text-align: center; margin: 4px 0 10px; }
+    .toggle-bar { display: flex; gap: 6px; margin-bottom: 10px; justify-content: center; flex-wrap: wrap; }
+    .toggle-btn {
+      padding: 5px 14px; border-radius: 16px; font-size: 11px; font-weight: 600;
+      cursor: pointer; border: 1px solid #ccc; background: white; color: #888;
+      transition: all 0.2s;
+    }
+    .toggle-btn.active {
+      border: 2px solid #8B6040; background: rgba(139,96,64,0.1); color: #6B4020;
+    }
+    .svg-wrap {
+      background: white; border-radius: 14px; border: 1px solid rgba(0,0,0,0.07);
+      padding: 10px; box-shadow: 0 3px 20px rgba(0,0,0,0.05);
+      width: 100%; overflow-x: auto;
+    }
+    .svg-wrap svg { width: 100%; height: auto; min-width: 700px; }
+    .summary { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+    .summary-card {
+      background: white; border: 1px solid #e8e4dc; border-radius: 10px;
+      padding: 7px 12px; text-align: center; min-width: 110;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+    .summary-card .icon { font-size: 16px; }
+    .summary-card .label { font-size: 9px; color: #8a7a6a; margin-top: 1px; }
+    .summary-card .value { font-size: 11px; font-weight: 700; color: #2a1a0a; margin-top: 1px; }
+    .floor-group { cursor: pointer; }
+    .floor-group:hover .floor-bg { filter: url(#fs); }
+    .github-note {
+      margin-top: 16px; padding: 10px 16px; background: rgba(139,96,64,0.06);
+      border-radius: 10px; font-size: 10px; color: #8a7a6a; text-align: center;
+      border: 1px solid rgba(139,96,64,0.12);
+    }
+    .github-note code { background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📍 포천시 선단동 · 대학원 연구동 + 기숙사동 단면 투시도</h1>
+    <p class="subtitle">적벽돌 외관 · 연구동 B1+6F (200명 연구) · 기숙사동 B1+7F (200명 1인실) · 각 층 호버 시 하이라이트</p>
+
+    <div class="toggle-bar">
+      <button class="toggle-btn active" onclick="toggleView('both')" id="btn-both">전체 보기</button>
+      <button class="toggle-btn" onclick="toggleView('research')" id="btn-research">🔬 연구동</button>
+      <button class="toggle-btn" onclick="toggleView('dorm')" id="btn-dorm">🛏️ 기숙사동</button>
+    </div>
+
+    <div class="svg-wrap">
+      <svg id="mainSvg" viewBox="0 0 790 540">
+        <defs>
+          <filter id="fs"><feDropShadow dx="1" dy="1.5" stdDeviation="1.5" floodColor="#000" floodOpacity="0.07"/></filter>
+        </defs>
+
+        <!-- Ground -->
+        <rect x="0" y="482" width="790" height="58" fill="#8A9A6A" rx="2"/>
+        <rect x="0" y="482" width="790" height="5" fill="#B0A890"/>
+
+        <!-- ===== RESEARCH BUILDING ===== -->
+        <g id="researchBldg">
+          <text x="195" y="48" text-anchor="middle" fill="#8B4020" font-size="10" font-weight="800">🔬 연구동 (B1F + 6F)</text>
+          <text x="195" y="59" text-anchor="middle" fill="#8a7a6a" font-size="7">200명 연구공간 · 세미나실 · 행정실</text>
+
+          <!-- Roof -->
+          <rect x="24" y="64" width="338" height="5" rx="1.5" fill="#606060"/>
+          <rect x="88" y="54" width="25" height="12" rx="1" fill="#707070"/>
+
+          <!-- R-6F: 연구실 D -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#7c3aed" data-bg="#f5f3ff">
+            <rect class="floor-bg" x="28" y="70" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="28" y="70" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="352" y="70" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="25" y="70" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="185" y="73" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="193" y="101" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="-4" y="95" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="10" y="106" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">6F</text>
+            <text x="178" y="79" text-anchor="middle" fill="#7c3aed" font-size="6.5" font-weight="700">연구실 D — 개인 데스크 50명 · 휴게실</text>
+            <!-- Desks -->
+            <g id="r6desks"></g>
+            <!-- Lounge -->
+            <text x="320" y="82" fill="#7c3aed" font-size="5.5" font-weight="600">휴게실</text>
+            <rect x="310" y="90" width="22" height="7" fill="#7090a0" rx="2"/>
+            <rect x="310" y="102" width="12" height="8" fill="#333" rx="0.6"/>
+            <rect x="311.5" y="103.5" width="9" height="5.5" fill="#5090c0" rx="0.3"/>
+          </g>
+
+          <!-- R-5F: 연구실 C -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#0891b2" data-bg="#ecfeff">
+            <rect class="floor-bg" x="28" y="128" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="28" y="128" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="352" y="128" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="25" y="128" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="185" y="131" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="193" y="159" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="-4" y="153" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="10" y="164" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">5F</text>
+            <text x="168" y="137" text-anchor="middle" fill="#0891b2" font-size="6.5" font-weight="700">연구실 C — 개인 데스크 50명 · 교수실</text>
+            <text x="320" y="140" fill="#0891b2" font-size="5.5" font-weight="600">교수실</text>
+            <rect x="308" y="146" width="28" height="12" fill="rgba(255,255,255,0.6)" stroke="#0891b2" stroke-width="0.4" rx="1"/>
+            <rect x="308" y="162" width="28" height="12" fill="rgba(255,255,255,0.6)" stroke="#0891b2" stroke-width="0.4" rx="1"/>
+          </g>
+
+          <!-- R-4F: 연구실 B -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#65a30d" data-bg="#f7fee7">
+            <rect class="floor-bg" x="28" y="186" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="28" y="186" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="352" y="186" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="25" y="186" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="185" y="189" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="193" y="217" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="-4" y="211" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="10" y="222" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">4F</text>
+            <text x="178" y="195" text-anchor="middle" fill="#65a30d" font-size="6.5" font-weight="700">연구실 B — 개인 데스크 50명 · 소회의실</text>
+          </g>
+
+          <!-- R-3F: 연구실 A -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#d97706" data-bg="#fffbeb">
+            <rect class="floor-bg" x="28" y="244" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="28" y="244" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="352" y="244" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="25" y="244" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="185" y="247" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="193" y="275" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="-4" y="269" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="10" y="280" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">3F</text>
+            <text x="178" y="253" text-anchor="middle" fill="#d97706" font-size="6.5" font-weight="700">연구실 A — 개인 데스크 50명 · 소회의실</text>
+          </g>
+
+          <!-- R-2F: 세미나실 -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#ea580c" data-bg="#fff7ed">
+            <rect class="floor-bg" x="28" y="302" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="28" y="302" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="352" y="302" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="25" y="302" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="185" y="305" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="193" y="333" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="-4" y="327" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="10" y="338" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">2F</text>
+            <text x="150" y="311" text-anchor="middle" fill="#ea580c" font-size="6.5" font-weight="700">대형 세미나실 (80석) · 소회의실 ×2</text>
+            <!-- Podium -->
+            <rect x="40" y="318" width="14" height="24" fill="#8B6F47" rx="1.5"/>
+            <rect x="42" y="315" width="10" height="6" fill="#5090c0" rx="0.8"/>
+            <!-- Seats -->
+            <rect x="60" y="318" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="80" y="318" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="100" y="318" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="120" y="318" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="140" y="318" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="60" y="326" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="80" y="326" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="100" y="326" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="120" y="326" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="140" y="326" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="60" y="334" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="80" y="334" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="100" y="334" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="120" y="334" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="140" y="334" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="60" y="342" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="80" y="342" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="100" y="342" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="120" y="342" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <rect x="140" y="342" width="16" height="2.5" fill="#D4C098" rx="0.3"/>
+            <!-- Meeting rooms -->
+            <rect x="280" y="316" width="30" height="14" fill="#C0A878" rx="2"/>
+            <rect x="316" y="316" width="30" height="14" fill="#C0A878" rx="2"/>
+            <text x="295" y="311" text-anchor="middle" fill="#ea580c" font-size="5">소회의실</text>
+          </g>
+
+          <!-- R-1F: 로비 -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#dc2626" data-bg="#fef2f2">
+            <rect class="floor-bg" x="28" y="360" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="28" y="360" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="352" y="360" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="25" y="360" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="185" y="363" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="193" y="391" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="-4" y="385" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="10" y="396" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">1F</text>
+            <text x="80" y="369" fill="#dc2626" font-size="6.5" font-weight="700">로비 · 행정실 · 편의시설</text>
+            <rect x="40" y="378" width="40" height="14" fill="#C0A878" rx="2"/>
+            <text x="60" y="388" text-anchor="middle" fill="white" font-size="5" font-weight="600">안내</text>
+            <rect x="95" y="382" width="30" height="8" fill="#7090a0" rx="2.5"/>
+            <rect x="260" y="376" width="25" height="22" fill="#D4C8A0" rx="1"/>
+            <rect x="290" y="376" width="25" height="22" fill="#D4C8A0" rx="1"/>
+            <rect x="320" y="378" width="14" height="18" fill="#d04040" rx="1.5"/>
+          </g>
+
+          <!-- R-B1: 주차장 -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#6b7280" data-bg="#f3f4f6">
+            <rect class="floor-bg" x="28" y="418" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="28" y="418" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="352" y="418" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="25" y="418" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="185" y="421" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="193" y="449" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="-4" y="443" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="10" y="454" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">B1</text>
+            <text x="178" y="427" text-anchor="middle" fill="#6b7280" font-size="6.5" font-weight="600">주차장 (40대) · 기계실</text>
+            <!-- Cars -->
+            <rect x="44" y="436" width="28" height="10" fill="#5a7a9a" rx="2.5"/>
+            <rect x="48" y="431" width="20" height="8" fill="#7090b0" rx="1.5"/>
+            <rect x="94" y="436" width="28" height="10" fill="#5a9a7a" rx="2.5"/>
+            <rect x="98" y="431" width="20" height="8" fill="#70b090" rx="1.5"/>
+            <rect x="144" y="436" width="28" height="10" fill="#9a5a7a" rx="2.5"/>
+            <rect x="148" y="431" width="20" height="8" fill="#b07090" rx="1.5"/>
+            <rect x="220" y="436" width="28" height="10" fill="#7a8a5a" rx="2.5"/>
+            <rect x="224" y="431" width="20" height="8" fill="#90a070" rx="1.5"/>
+            <rect x="270" y="436" width="28" height="10" fill="#5a7a9a" rx="2.5"/>
+            <rect x="274" y="431" width="20" height="8" fill="#7090b0" rx="1.5"/>
+            <!-- Machine room -->
+            <rect x="315" y="432" width="30" height="22" fill="#708090" rx="2"/>
+            <text x="330" y="446" text-anchor="middle" fill="#c0c8d0" font-size="4.5">기계실</text>
+          </g>
+        </g>
+
+        <!-- Connecting path -->
+        <rect id="connPath" x="362" y="472" width="58" height="8" fill="#B0A890" rx="1"/>
+        <text id="connText" x="391" y="479" text-anchor="middle" fill="#7a7060" font-size="5.5">연결 통로</text>
+
+        <!-- ===== DORM BUILDING ===== -->
+        <g id="dormBldg">
+          <text x="590" y="10" text-anchor="middle" fill="#5030A0" font-size="10" font-weight="800">🛏️ 기숙사동 (B1F + 7F)</text>
+          <text x="590" y="21" text-anchor="middle" fill="#8a7a8a" font-size="7">200명 1인실 · 세탁실 · 휴게실</text>
+
+          <!-- Roof -->
+          <rect x="418" y="26" width="338" height="5" rx="1.5" fill="#606060"/>
+          <rect x="508" y="16" width="25" height="12" rx="1" fill="#707070"/>
+
+          <!-- D-7F -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#14b8a6" data-bg="#f0fdfa">
+            <rect class="floor-bg" x="422" y="32" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="422" y="32" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="746" y="32" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="419" y="32" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="579" y="35" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="587" y="63" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="756" y="57" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="770" y="68" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">7F</text>
+            <text x="530" y="41" text-anchor="middle" fill="#14b8a6" font-size="6.5" font-weight="700">1인실 ×30 (701~730호) · 휴게실</text>
+            <!-- Rooms top row -->
+            <rect x="430" y="45" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="432" y="50" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="45" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="454" y="50" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="45" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="476" y="50" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="45" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="498" y="50" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="45" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="520" y="50" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="45" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="542" y="50" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <!-- Corridor -->
+            <rect x="430" y="62" width="140" height="3" fill="#e8e4dc" rx="0.5"/>
+            <!-- Rooms bottom row -->
+            <rect x="430" y="66" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="432" y="71" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="66" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="454" y="71" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="66" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="476" y="71" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="66" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="498" y="71" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="66" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="520" y="71" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="66" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#14b8a6" stroke-width="0.4" rx="1"/>
+            <rect x="542" y="71" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <!-- Lounge -->
+            <text x="720" y="44" fill="#14b8a6" font-size="5.5" font-weight="600">휴게실</text>
+            <rect x="710" y="50" width="22" height="7" fill="#7090a0" rx="2"/>
+            <rect x="710" y="62" width="12" height="8" fill="#333" rx="0.6"/>
+            <rect x="726" y="60" width="10" height="16" fill="#d04040" rx="1"/>
+          </g>
+
+          <!-- D-6F to D-2F (simplified dorm floors) -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#0ea5e9" data-bg="#f0f9ff">
+            <rect class="floor-bg" x="422" y="90" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="422" y="90" width="6" height="56" fill="#A86850" rx="0.5"/><rect x="746" y="90" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="419" y="90" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="579" y="93" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="587" y="121" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="756" y="115" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="770" y="126" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">6F</text>
+            <text x="530" y="99" text-anchor="middle" fill="#0ea5e9" font-size="6.5" font-weight="700">1인실 ×34 (601~634호)</text>
+            <rect x="430" y="103" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="432" y="108" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="103" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="454" y="108" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="103" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="476" y="108" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="103" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="498" y="108" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="103" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="520" y="108" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="103" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="542" y="108" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="430" y="120" width="140" height="3" fill="#e8e4dc" rx="0.5"/>
+            <rect x="430" y="124" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="432" y="129" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="124" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="454" y="129" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="124" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="476" y="129" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="124" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="498" y="129" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="124" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="520" y="129" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="124" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#0ea5e9" stroke-width="0.4" rx="1"/><rect x="542" y="129" width="11" height="5" fill="#c8a070" rx="0.6"/>
+          </g>
+
+          <!-- D-5F -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#3b82f6" data-bg="#eff6ff">
+            <rect class="floor-bg" x="422" y="148" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="422" y="148" width="6" height="56" fill="#A86850" rx="0.5"/><rect x="746" y="148" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="419" y="148" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="579" y="151" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <text x="587" y="179" text-anchor="middle" fill="#bbb" font-size="4" font-weight="600">EV</text>
+            <rect x="756" y="173" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="770" y="184" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">5F</text>
+            <text x="530" y="157" text-anchor="middle" fill="#3b82f6" font-size="6.5" font-weight="700">1인실 ×34 (501~534호)</text>
+            <rect x="430" y="161" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="432" y="166" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="161" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="454" y="166" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="161" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="476" y="166" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="161" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="498" y="166" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="161" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="520" y="166" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="161" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="542" y="166" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="430" y="178" width="140" height="3" fill="#e8e4dc" rx="0.5"/>
+            <rect x="430" y="182" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="432" y="187" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="182" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="454" y="187" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="182" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="476" y="187" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="182" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="498" y="187" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="182" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="520" y="187" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="182" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#3b82f6" stroke-width="0.4" rx="1"/><rect x="542" y="187" width="11" height="5" fill="#c8a070" rx="0.6"/>
+          </g>
+
+          <!-- D-4F, D-3F, D-2F (compact repeated pattern) -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#6366f1" data-bg="#eef2ff">
+            <rect class="floor-bg" x="422" y="206" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="422" y="206" width="6" height="56" fill="#A86850" rx="0.5"/><rect x="746" y="206" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="419" y="206" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="579" y="209" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <rect x="756" y="231" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="770" y="242" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">4F</text>
+            <text x="530" y="215" text-anchor="middle" fill="#6366f1" font-size="6.5" font-weight="700">1인실 ×34 (401~434호)</text>
+            <rect x="430" y="218" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="432" y="223" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="218" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="454" y="223" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="218" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="476" y="223" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="218" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="498" y="223" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="218" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="520" y="223" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="218" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="542" y="223" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="430" y="236" width="140" height="3" fill="#e8e4dc" rx="0.5"/>
+            <rect x="430" y="240" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="432" y="245" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="240" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="454" y="245" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="240" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="476" y="245" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="240" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="498" y="245" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="240" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="520" y="245" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="240" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#6366f1" stroke-width="0.4" rx="1"/><rect x="542" y="245" width="11" height="5" fill="#c8a070" rx="0.6"/>
+          </g>
+
+          <!-- D-3F -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#7c3aed" data-bg="#f5f3ff">
+            <rect class="floor-bg" x="422" y="264" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="422" y="264" width="6" height="56" fill="#A86850" rx="0.5"/><rect x="746" y="264" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="419" y="264" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="579" y="267" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <rect x="756" y="289" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="770" y="300" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">3F</text>
+            <text x="530" y="273" text-anchor="middle" fill="#7c3aed" font-size="6.5" font-weight="700">1인실 ×34 (301~334호)</text>
+            <rect x="430" y="277" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="432" y="282" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="277" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="454" y="282" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="277" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="476" y="282" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="277" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="498" y="282" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="277" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="520" y="282" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="277" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="542" y="282" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="430" y="295" width="140" height="3" fill="#e8e4dc" rx="0.5"/>
+            <rect x="430" y="299" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="432" y="304" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="299" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="454" y="304" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="299" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="476" y="304" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="299" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="498" y="304" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="299" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="520" y="304" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="299" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#7c3aed" stroke-width="0.4" rx="1"/><rect x="542" y="304" width="11" height="5" fill="#c8a070" rx="0.6"/>
+          </g>
+
+          <!-- D-2F -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#9333ea" data-bg="#faf5ff">
+            <rect class="floor-bg" x="422" y="322" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="422" y="322" width="6" height="56" fill="#A86850" rx="0.5"/><rect x="746" y="322" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="419" y="322" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="579" y="325" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <rect x="756" y="347" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="770" y="358" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">2F</text>
+            <text x="530" y="331" text-anchor="middle" fill="#9333ea" font-size="6.5" font-weight="700">1인실 ×34 (201~234호)</text>
+            <rect x="430" y="335" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="432" y="340" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="335" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="454" y="340" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="335" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="476" y="340" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="335" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="498" y="340" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="335" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="520" y="340" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="335" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="542" y="340" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="430" y="353" width="140" height="3" fill="#e8e4dc" rx="0.5"/>
+            <rect x="430" y="357" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="432" y="362" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="452" y="357" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="454" y="362" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="474" y="357" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="476" y="362" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="496" y="357" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="498" y="362" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="518" y="357" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="520" y="362" width="11" height="5" fill="#c8a070" rx="0.6"/>
+            <rect x="540" y="357" width="20" height="16" fill="rgba(255,255,255,0.5)" stroke="#9333ea" stroke-width="0.4" rx="1"/><rect x="542" y="362" width="11" height="5" fill="#c8a070" rx="0.6"/>
+          </g>
+
+          <!-- D-1F: 로비·세탁실 -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#be123c" data-bg="#fff1f2">
+            <rect class="floor-bg" x="422" y="380" width="330" height="56" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="422" y="380" width="6" height="56" fill="#A86850" rx="0.5"/><rect x="746" y="380" width="6" height="56" fill="#A86850" rx="0.5"/>
+            <rect x="419" y="380" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="579" y="383" width="16" height="51" fill="#e8e8e8" stroke="#d0d0d0" stroke-width="0.4" rx="0.8"/>
+            <rect x="756" y="405" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="770" y="416" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">1F</text>
+            <text x="470" y="389" fill="#be123c" font-size="6.5" font-weight="700">로비</text>
+            <rect x="432" y="396" width="35" height="12" fill="#C0A878" rx="2"/>
+            <text x="449" y="405" text-anchor="middle" fill="white" font-size="4.5" font-weight="600">안내</text>
+            <text x="540" y="389" fill="#be123c" font-size="6.5" font-weight="700">세탁실</text>
+            <rect x="520" y="396" width="13" height="14" fill="#c0c8d0" rx="2"/><circle cx="526.5" cy="404" r="4" fill="#e0e4e8"/><circle cx="526.5" cy="404" r="2" fill="#a0b0c0"/>
+            <rect x="538" y="396" width="13" height="14" fill="#c0c8d0" rx="2"/><circle cx="544.5" cy="404" r="4" fill="#e0e4e8"/><circle cx="544.5" cy="404" r="2" fill="#a0b0c0"/>
+            <rect x="556" y="396" width="13" height="14" fill="#c0c8d0" rx="2"/><circle cx="562.5" cy="404" r="4" fill="#e0e4e8"/><circle cx="562.5" cy="404" r="2" fill="#a0b0c0"/>
+            <text x="680" y="389" fill="#be123c" font-size="6.5" font-weight="700">택배함</text>
+            <rect x="670" y="396" width="10" height="8" fill="#e8e0d0" stroke="#c8c0b0" stroke-width="0.4" rx="0.5"/>
+            <rect x="682" y="396" width="10" height="8" fill="#e8e0d0" stroke="#c8c0b0" stroke-width="0.4" rx="0.5"/>
+            <rect x="694" y="396" width="10" height="8" fill="#e8e0d0" stroke="#c8c0b0" stroke-width="0.4" rx="0.5"/>
+            <rect x="670" y="406" width="10" height="8" fill="#e8e0d0" stroke="#c8c0b0" stroke-width="0.4" rx="0.5"/>
+            <rect x="682" y="406" width="10" height="8" fill="#e8e0d0" stroke="#c8c0b0" stroke-width="0.4" rx="0.5"/>
+            <rect x="694" y="406" width="10" height="8" fill="#e8e0d0" stroke="#c8c0b0" stroke-width="0.4" rx="0.5"/>
+          </g>
+
+          <!-- D-B1: 주차장 -->
+          <g class="floor-group" onmouseover="hlFloor(this)" onmouseout="unhlFloor(this)" data-color="#6b7280" data-bg="#f3f4f6">
+            <rect class="floor-bg" x="422" y="438" width="330" height="40" rx="2" fill="#fafaf8" stroke="#e8e4dc" stroke-width="0.8"/>
+            <rect x="422" y="438" width="6" height="40" fill="#A86850" rx="0.5"/><rect x="746" y="438" width="6" height="40" fill="#A86850" rx="0.5"/>
+            <rect x="419" y="438" width="336" height="2.5" fill="#808080" rx="0.3"/>
+            <rect x="756" y="451" width="28" height="16" rx="8" fill="#e0dcd4"/>
+            <text x="770" y="462" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="JetBrains Mono">B1</text>
+            <text x="587" y="449" text-anchor="middle" fill="#6b7280" font-size="6.5" font-weight="600">주차장 (30대) · 창고</text>
+            <rect x="440" y="454" width="28" height="10" fill="#5a7a9a" rx="2.5"/>
+            <rect x="480" y="454" width="28" height="10" fill="#5a9a7a" rx="2.5"/>
+            <rect x="520" y="454" width="28" height="10" fill="#9a5a7a" rx="2.5"/>
+            <rect x="580" y="454" width="28" height="10" fill="#7a8a5a" rx="2.5"/>
+            <rect x="700" y="450" width="30" height="18" fill="#708090" rx="2"/>
+            <text x="715" y="462" text-anchor="middle" fill="#c0c8d0" font-size="4">창고</text>
+          </g>
+        </g>
+
+        <!-- Legend -->
+        <g transform="translate(10, 530)">
+          <rect x="0" y="0" width="8" height="8" fill="#c8a070" rx="1"/><text x="11" y="7" fill="#6a6a6a" font-size="6">침대</text>
+          <rect x="55" y="0" width="8" height="8" fill="#8B6F47" rx="1"/><text x="66" y="7" fill="#6a6a6a" font-size="6">책상</text>
+          <rect x="110" y="0" width="8" height="8" fill="#a0aab4" rx="1"/><text x="121" y="7" fill="#6a6a6a" font-size="6">모니터</text>
+          <rect x="175" y="0" width="8" height="8" fill="#D4C098" rx="1"/><text x="186" y="7" fill="#6a6a6a" font-size="6">좌석</text>
+          <rect x="225" y="0" width="8" height="8" fill="#A86850" rx="1"/><text x="236" y="7" fill="#6a6a6a" font-size="6">적벽돌</text>
+          <rect x="290" y="0" width="8" height="8" fill="#c0c8d0" rx="1"/><text x="301" y="7" fill="#6a6a6a" font-size="6">세탁기</text>
+          <rect x="355" y="0" width="8" height="8" fill="#5a7a9a" rx="1"/><text x="366" y="7" fill="#6a6a6a" font-size="6">차량</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="summary">
+      <div class="summary-card"><div class="icon">🔬</div><div class="label">연구동</div><div class="value">B1+6F, 200명 데스크</div></div>
+      <div class="summary-card"><div class="icon">🛏️</div><div class="label">기숙사동</div><div class="value">B1+7F, 200명 1인실</div></div>
+      <div class="summary-card"><div class="icon">🎓</div><div class="label">세미나실</div><div class="value">80석 (연구동 2F)</div></div>
+      <div class="summary-card"><div class="icon">🅿️</div><div class="label">주차</div><div class="value">총 70대</div></div>
+      <div class="summary-card"><div class="icon">🧺</div><div class="label">세탁실</div><div class="value">기숙사 1F</div></div>
+      <div class="summary-card"><div class="icon">📐</div><div class="label">총 연면적</div><div class="value">약 7,500㎡</div></div>
+    </div>
+
+    <div class="github-note">
+      <strong>📋 GitHub Pages 배포 방법:</strong><br>
+      1. GitHub에 새 repo 생성 → 이 <code>index.html</code> 파일 업로드<br>
+      2. <code>thumbnail.png</code> (1200×630px) 같은 폴더에 업로드<br>
+      3. Settings → Pages → Source를 <code>main</code> 브랜치로 설정<br>
+      4. OG 태그의 이미지 URL을 <code>https://[username].github.io/[repo]/thumbnail.png</code>으로 수정<br>
+      5. 카카오톡·슬랙 등에서 링크 공유 시 썸네일이 표시됩니다
+    </div>
+  </div>
+
+  <script>
+    function hlFloor(el) {
+      const bg = el.querySelector('.floor-bg');
+      const color = el.dataset.color;
+      const bgColor = el.dataset.bg;
+      if (bg) {
+        bg.setAttribute('fill', bgColor);
+        bg.setAttribute('stroke', color);
+        bg.setAttribute('stroke-width', '1.8');
+        bg.setAttribute('filter', 'url(#fs)');
+      }
+    }
+    function unhlFloor(el) {
+      const bg = el.querySelector('.floor-bg');
+      if (bg) {
+        bg.setAttribute('fill', '#fafaf8');
+        bg.setAttribute('stroke', '#e8e4dc');
+        bg.setAttribute('stroke-width', '0.8');
+        bg.removeAttribute('filter');
+      }
+    }
+    function toggleView(view) {
+      document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('btn-' + view).classList.add('active');
+      const r = document.getElementById('researchBldg');
+      const d = document.getElementById('dormBldg');
+      const c = document.getElementById('connPath');
+      const ct = document.getElementById('connText');
+      r.style.display = (view === 'both' || view === 'research') ? '' : 'none';
+      d.style.display = (view === 'both' || view === 'dorm') ? '' : 'none';
+      c.style.display = view === 'both' ? '' : 'none';
+      ct.style.display = view === 'both' ? '' : 'none';
+    }
+  </script>
+</body>
+</html>
